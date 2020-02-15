@@ -19,4 +19,11 @@ public interface ICard {
 	 * @return The amount of point represented by this {@link ICard}.
 	 */
 	int getPoint();
+
+	/**
+	 * Set the amount of point represented by this {@link ICard}.
+	 * 
+	 * @param point
+	 */
+	void setPoint(int point);
 }
