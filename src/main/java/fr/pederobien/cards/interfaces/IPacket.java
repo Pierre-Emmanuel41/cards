@@ -78,4 +78,9 @@ public interface IPacket {
 	 * Shuffle the {@link IPacket} randomly.
 	 */
 	void shuffle();
+
+	/**
+	 * @return The {@link List} of cards remaining in the packet. This list is unmodifiable.
+	 */
+	List<Card> getCards();
 }

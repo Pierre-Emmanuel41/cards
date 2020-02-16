@@ -1,6 +1,7 @@
 package fr.pederobien.cards;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -90,6 +91,11 @@ public class Packet implements IPacket {
 			cards.set(i, cards.get(randInt));
 			cards.set(randInt, temp);
 		}
+	}
+
+	@Override
+	public List<Card> getCards() {
+		return Collections.unmodifiableList(cards);
 	}
 
 	private void fillPacket() {
