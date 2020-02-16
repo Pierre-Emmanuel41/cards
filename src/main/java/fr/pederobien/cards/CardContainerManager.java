@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.pederobien.cards.enums.Card;
-import fr.pederobien.cards.enums.PacketSize;
+import fr.pederobien.cards.enums.PacketProperty;
 import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.ICardContainerManager;
 import fr.pederobien.cards.interfaces.IPacket;
@@ -13,8 +13,8 @@ public class CardContainerManager implements ICardContainerManager {
 	private IPacket packet;
 	private ICardContainer stock, pill;
 
-	public CardContainerManager(PacketSize packetSize) {
-		packet = CardContainerFactory.createPacket(packetSize);
+	public CardContainerManager(PacketProperty packetProperty) {
+		packet = CardContainerFactory.createPacket(packetProperty);
 		stock = CardContainerFactory.createStock();
 		pill = CardContainerFactory.createPill();
 	}

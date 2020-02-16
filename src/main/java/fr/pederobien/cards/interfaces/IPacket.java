@@ -5,7 +5,7 @@ import java.util.List;
 import javax.naming.OperationNotSupportedException;
 
 import fr.pederobien.cards.enums.Card;
-import fr.pederobien.cards.enums.PacketSize;
+import fr.pederobien.cards.enums.PacketProperty;
 
 public interface IPacket {
 
@@ -70,9 +70,9 @@ public interface IPacket {
 	/**
 	 * Change the size of the packet and call {@link #reset()}.
 	 * 
-	 * @param packetSize The new size of the packet.
+	 * @param packetProperty The new size of the packet.
 	 */
-	void reset(PacketSize packetSize);
+	void reset(PacketProperty packetProperty);
 
 	/**
 	 * Shuffle the {@link IPacket} randomly.

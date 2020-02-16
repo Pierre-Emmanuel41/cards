@@ -1,12 +1,12 @@
 package fr.pederobien.cards.enums;
 
-public enum PacketSize {
+public enum PacketProperty {
 	FIFTY_FOUR(2, 16, 12, Color.TRUMP), FIFTY_TWO(2, 15, 12, Color.TRUMP), THIRTY_TWO(7, 15, 12, Color.TRUMP), FULL(1, 28, 16, Color.NONE);
 
 	private int lowerRange, upperRange, forbiddenValue;
 	private Color forbiddenColor;
 
-	private PacketSize(int lowerRange, int upperRange, int forbiddenValue, Color forbiddenColor) {
+	private PacketProperty(int lowerRange, int upperRange, int forbiddenValue, Color forbiddenColor) {
 		this.lowerRange = lowerRange;
 		this.upperRange = upperRange;
 		this.forbiddenValue = forbiddenValue;

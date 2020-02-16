@@ -8,16 +8,16 @@ import java.util.Random;
 import java.util.StringJoiner;
 
 import fr.pederobien.cards.enums.Card;
-import fr.pederobien.cards.enums.PacketSize;
+import fr.pederobien.cards.enums.PacketProperty;
 import fr.pederobien.cards.interfaces.IPacket;
 
 public class Packet implements IPacket {
-	private PacketSize packetSize;
+	private PacketProperty packetProperty;
 	private LinkedList<Card> cards;
 
-	public Packet(PacketSize packetSize) {
+	public Packet(PacketProperty packetProperty) {
 		cards = new LinkedList<Card>();
-		this.packetSize = packetSize;
+		this.packetProperty = packetProperty;
 		fillPacket();
 	}
 
@@ -71,8 +71,8 @@ public class Packet implements IPacket {
 	}
 
 	@Override
-	public void reset(PacketSize packetSize) {
-		this.packetSize = packetSize;
+	public void reset(PacketProperty packetProperty) {
+		this.packetProperty = packetProperty;
 		reset();
 	}
 
@@ -103,8 +103,8 @@ public class Packet implements IPacket {
 
 	private void fillPacket() {
 		for (Card card : Card.values()) {
-			if (card.getValue() < packetSize.getLowerRange() || packetSize.getUpperRange() < card.getValue() || packetSize.getForbiddenValue() == card.getValue()
-					|| packetSize.getForbiddenColor().equals(card.getColor()))
+			if (card.getValue() < packetProperty.getLowerRange() || packetProperty.getUpperRange() < card.getValue() || packetProperty.getForbiddenValue() == card.getValue()
+					|| packetProperty.getForbiddenColor().equals(card.getColor()))
 				continue;
 			cards.add(card);
 		}

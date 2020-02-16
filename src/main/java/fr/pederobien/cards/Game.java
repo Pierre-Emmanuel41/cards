@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import fr.pederobien.cards.enums.Card;
-import fr.pederobien.cards.enums.PacketSize;
+import fr.pederobien.cards.enums.PacketProperty;
 import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.ICardContainerManager;
 import fr.pederobien.cards.interfaces.IGame;
@@ -17,9 +17,9 @@ public class Game implements IGame {
 	private Map<String, IPlayer> players;
 	private ICardContainerManager manager;
 
-	public Game(PacketSize packetSize) {
+	public Game(PacketProperty packetProperty) {
 		players = new HashMap<String, IPlayer>();
-		manager = new CardContainerManager(packetSize);
+		manager = new CardContainerManager(packetProperty);
 	}
 
 	@Override
