@@ -16,4 +16,12 @@ public interface ICardContainerManager {
 	 * @return The pill managed by this {@link ICardContainerManager}.
 	 */
 	ICardContainer getPill();
+
+	/**
+	 * If toBeginning is true, then the packet, the stock and the pill are reset. Otherwise, the cards present in the stock and the
+	 * pill are added to the end of the packet. The packet is neither reset neither shuffled.
+	 * 
+	 * @param toBeginning To know which behaviour to adopt.
+	 */
+	void reset(boolean toBeginning);
 }
