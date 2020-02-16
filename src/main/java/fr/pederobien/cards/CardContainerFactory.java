@@ -17,4 +17,8 @@ public class CardContainerFactory {
 	public static ICardContainer createPill() {
 		return new CardContainer();
 	}
+
+	public static ICardContainer createPlayerHand() {
+		return new CardContainer();
+	}
 }
