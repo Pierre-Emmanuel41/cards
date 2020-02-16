@@ -21,4 +21,9 @@ public class Player implements IPlayer {
 	public ICardContainer getHand() {
 		return hand;
 	}
+
+	@Override
+	public void reset() {
+		hand.clear();
+	}
 }

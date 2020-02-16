@@ -11,4 +11,9 @@ public interface IPlayer {
 	 * @return The hand of this {@link IPlayer}.
 	 */
 	ICardContainer getHand();
+
+	/**
+	 * Remove all cards from the hand of this {@link IPlayer}.
+	 */
+	void reset();
 }
