@@ -7,10 +7,10 @@ import java.util.List;
 import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.interfaces.ICardContainer;
 
-public abstract class AbstractCardContainer implements ICardContainer {
+public class CardContainer implements ICardContainer {
 	private List<Card> cards;
 
-	protected AbstractCardContainer() {
+	protected CardContainer() {
 		cards = new ArrayList<Card>();
 	}
 
