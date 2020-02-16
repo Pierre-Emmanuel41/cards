@@ -26,6 +26,7 @@ public class Player implements IPlayer {
 	@Override
 	public void reset() {
 		hand.clear();
+		pill.clear();
 	}
 
 	@Override
