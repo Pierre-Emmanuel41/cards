@@ -3,6 +3,7 @@ package fr.pederobien.cards;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.StringJoiner;
 
 import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.interfaces.ICardContainer;
@@ -47,5 +48,14 @@ public class CardContainer implements ICardContainer {
 	@Override
 	public List<Card> getCards() {
 		return Collections.unmodifiableList(cards);
+	}
+
+	@Override
+	public String toString() {
+		StringJoiner joiner = new StringJoiner("\n");
+		joiner.add("CardContainer, size=" + size());
+		for (Card card : cards)
+			joiner.add(card.toString());
+		return joiner.toString();
 	}
 }

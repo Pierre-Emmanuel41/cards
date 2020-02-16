@@ -68,4 +68,15 @@ public class CardContainerTest {
 		Assert.assertEquals(0, container.size());
 		Assert.assertTrue(container.getCards().isEmpty());
 	}
+
+	@Test
+	public void Te_ToString() {
+		List<Card> cards = new ArrayList<Card>();
+		cards.add(Card.ACE_CLUBS);
+		cards.add(Card.FIVE_CLUBS);
+		cards.add(Card.KING_DIAMONDS);
+		container.addAll(cards);
+		String toString = "CardContainer, size=3\nace of clubs\n5 of clubs\nking of diamonds";
+		Assert.assertEquals(toString, container.toString());
+	}
 }
