@@ -2,7 +2,7 @@ package fr.pederobien.cards.enums;
 
 public enum Color {
 
-	CLUBS("clubs"), DIAMONDS("diamonds"), HEARTS("hearts"), SPADES("spades"), NONE("none");
+	CLUBS("clubs"), DIAMONDS("diamonds"), HEARTS("hearts"), SPADES("spades"), TRUMP("trump"), NONE("none");
 
 	private String name;
 	private boolean trump;
