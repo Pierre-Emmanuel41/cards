@@ -11,20 +11,13 @@ import fr.pederobien.cards.enums.PacketSize;
 import fr.pederobien.cards.interfaces.IPacket;
 
 public class Packet implements IPacket {
-	private static IPacket packet;
 	private PacketSize packetSize;
 	private LinkedList<Card> cards;
 
-	private Packet(PacketSize packetSize) {
+	public Packet(PacketSize packetSize) {
 		cards = new LinkedList<Card>();
 		this.packetSize = packetSize;
 		fillPacket();
-	}
-
-	public static synchronized IPacket of(PacketSize packetSize) {
-		if (packet == null)
-			packet = new Packet(packetSize);
-		return packet;
 	}
 
 	@Override
