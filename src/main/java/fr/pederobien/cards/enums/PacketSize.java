@@ -1,28 +1,23 @@
 package fr.pederobien.cards.enums;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum PacketSize {
-	FIFTY_FOUR(2, 16, 12), FIFTY_TWO(2, 15, 12), THIRTY_TWO(7, 15, 12);
+	FIFTY_FOUR(2, 16, 12, Color.TRUMP), FIFTY_TWO(2, 15, 12, Color.TRUMP), THIRTY_TWO(7, 15, 12, Color.TRUMP), FULL(1, 28, 16, Color.NONE);
 
-	private int lowerRange, upperRange;
-	private List<Integer> forbiddenCards;
+	private int lowerRange, upperRange, forbiddenValue;
+	private Color forbiddenColor;
 
-	private PacketSize(int lowerRange, int upperRange, int... ignoredCards) {
+	private PacketSize(int lowerRange, int upperRange, int forbiddenValue, Color forbiddenColor) {
 		this.lowerRange = lowerRange;
 		this.upperRange = upperRange;
-
-		forbiddenCards = new ArrayList<Integer>();
-		for (int i = 0; i < ignoredCards.length; i++)
-			forbiddenCards.add(ignoredCards[i]);
+		this.forbiddenValue = forbiddenValue;
+		this.forbiddenColor = forbiddenColor;
 	}
 
 	/**
 	 * @return An array containing the forbidden values for cards. This method is useful when cards in the range should not be added.
 	 */
-	public List<Integer> getForbiddenValues() {
-		return forbiddenCards;
+	public int getForbiddenValue() {
+		return forbiddenValue;
 	}
 
 	/**
@@ -37,5 +32,9 @@ public enum PacketSize {
 	 */
 	public int getUpperRange() {
 		return upperRange;
+	}
+
+	public Color getForbiddenColor() {
+		return forbiddenColor;
 	}
 }

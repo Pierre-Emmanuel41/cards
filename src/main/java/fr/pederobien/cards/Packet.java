@@ -92,10 +92,12 @@ public class Packet implements IPacket {
 	}
 
 	private void fillPacket() {
-		for (Card card : Card.values())
-			if (packetSize.getLowerRange() <= card.getValue() && card.getValue() <= packetSize.getUpperRange()
-					&& !packetSize.getForbiddenValues().contains(card.getValue()))
-				cards.add(card);
+		for (Card card : Card.values()) {
+			if (card.getValue() < packetSize.getLowerRange() || packetSize.getUpperRange() < card.getValue() || packetSize.getForbiddenValue() == card.getValue()
+					|| packetSize.getForbiddenColor().equals(card.getColor()))
+				continue;
+			cards.add(card);
+		}
 	}
 
 	private void checkRange(int n) {
