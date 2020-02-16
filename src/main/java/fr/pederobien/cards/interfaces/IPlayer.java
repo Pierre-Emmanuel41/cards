@@ -16,4 +16,9 @@ public interface IPlayer {
 	 * Remove all cards from the hand of this {@link IPlayer}.
 	 */
 	void reset();
+
+	/**
+	 * @return The pill of this player.
+	 */
+	ICardContainer getPill();
 }

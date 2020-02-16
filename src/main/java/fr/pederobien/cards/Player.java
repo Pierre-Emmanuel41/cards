@@ -5,11 +5,12 @@ import fr.pederobien.cards.interfaces.IPlayer;
 
 public class Player implements IPlayer {
 	private String name;
-	private ICardContainer hand;
+	private ICardContainer hand, pill;
 
 	protected Player(String name) {
 		this.name = name;
 		hand = CardContainerFactory.createPlayerHand();
+		pill = CardContainerFactory.createPlayerHand();
 	}
 
 	@Override
@@ -25,5 +26,10 @@ public class Player implements IPlayer {
 	@Override
 	public void reset() {
 		hand.clear();
+	}
+
+	@Override
+	public ICardContainer getPill() {
+		return pill;
 	}
 }
