@@ -48,4 +48,9 @@ public class PlayerTest {
 		Assert.assertTrue(player.getHand().getCards().isEmpty());
 		Assert.assertTrue(player.getPill().getCards().isEmpty());
 	}
+
+	@Test
+	public void Tc_ToString() {
+		Assert.assertEquals("Player={name=Player}", player.toString());
+	}
 }

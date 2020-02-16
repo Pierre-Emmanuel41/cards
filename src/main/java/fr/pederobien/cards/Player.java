@@ -33,4 +33,9 @@ public class Player implements IPlayer {
 	public ICardContainer getPill() {
 		return pill;
 	}
+
+	@Override
+	public String toString() {
+		return "Player={name=" + getName() + "}";
+	}
 }
