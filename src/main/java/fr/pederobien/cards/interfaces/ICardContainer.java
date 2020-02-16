@@ -35,6 +35,11 @@ public interface ICardContainer {
 	void removeAll(List<Card> cards);
 
 	/**
+	 * Remove all the cards in this {@link ICardContainer}.
+	 */
+	void clear();
+
+	/**
 	 * @return The actual size of the {@link ICardContainer}, it correspond to the number of remaining cards.
 	 */
 	int size();

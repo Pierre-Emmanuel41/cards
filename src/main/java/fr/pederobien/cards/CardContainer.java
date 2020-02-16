@@ -35,6 +35,11 @@ public class CardContainer implements ICardContainer {
 	}
 
 	@Override
+	public void clear() {
+		cards.clear();
+	}
+
+	@Override
 	public int size() {
 		return cards.size();
 	}
