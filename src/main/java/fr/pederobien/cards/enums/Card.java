@@ -1,8 +1,6 @@
 package fr.pederobien.cards.enums;
 
-import fr.pederobien.cards.interfaces.ICard;
-
-public enum Card implements ICard {
+public enum Card {
 	ACE_CLUBS(Value.ACE, Color.CLUBS), ACE_DIAMONDS(Value.ACE, Color.DIAMONDS), ACE_HEARTS(Value.ACE, Color.HEARTS), ACE_SPADES(Value.ACE, Color.SPADES),
 	TWO_CLUBS(Value.TWO, Color.CLUBS), TWO_DIAMONDS(Value.TWO, Color.DIAMONDS), TWO_HEARTS(Value.TWO, Color.HEARTS), TWO_SPADES(Value.TWO, Color.SPADES),
 	THREE_CLUBS(Value.THREE, Color.CLUBS), THREE_DIAMONDS(Value.THREE, Color.DIAMONDS), THREE_HEARTS(Value.THREE, Color.HEARTS), THREE_SPADES(Value.THREE, Color.SPADES),
@@ -26,22 +24,18 @@ public enum Card implements ICard {
 		this.color = color;
 	}
 
-	@Override
 	public Value getValue() {
 		return value;
 	}
 
-	@Override
 	public Color getColor() {
 		return color;
 	}
 
-	@Override
 	public int getPoint() {
 		return point;
 	}
 
-	@Override
 	public void setPoint(int point) {
 		this.point = point;
 	}
