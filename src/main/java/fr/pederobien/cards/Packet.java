@@ -28,7 +28,8 @@ public class Packet implements IPacket {
 
 	@Override
 	public void addLast(List<Card> cards) {
-		cards.addAll(cards);
+		for (Card card : cards)
+			addLast(card);
 	}
 
 	@Override
@@ -103,8 +104,8 @@ public class Packet implements IPacket {
 
 	private void fillPacket() {
 		for (Card card : Card.values()) {
-			if (card.getValue() < packetProperty.getLowerRange() || packetProperty.getUpperRange() < card.getValue() || packetProperty.getForbiddenValue() == card.getValue()
-					|| packetProperty.getForbiddenColor().equals(card.getColor()))
+			if (card.getValue() < packetProperty.getLowerRange() || packetProperty.getUpperRange() < card.getValue()
+					|| packetProperty.getForbiddenValue() == card.getValue() || packetProperty.getForbiddenColor().equals(card.getColor()))
 				continue;
 			cards.add(card);
 		}

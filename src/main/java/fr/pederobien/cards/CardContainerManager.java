@@ -44,6 +44,8 @@ public class CardContainerManager implements ICardContainerManager {
 			List<Card> cards = new ArrayList<Card>(stock.getCards());
 			cards.addAll(pill.getCards());
 			packet.addLast(cards);
+			stock.clear();
+			pill.clear();
 		}
 	}
 }
