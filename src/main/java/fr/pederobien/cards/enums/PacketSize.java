@@ -1,7 +1,7 @@
 package fr.pederobien.cards.enums;
 
 public enum PacketSize {
-	FIFTY_TWO(2, 14), THIRTY_TWO(7, 14);
+	FIFTY_FOUR(2, 15), FIFTY_TWO(2, 14), THIRTY_TWO(7, 14);
 
 	private int lowerRange, upperRange;
 

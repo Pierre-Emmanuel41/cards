@@ -13,7 +13,8 @@ public enum Card {
 	TEN_CLUBS(Value.TEN, Color.CLUBS), TEN_DIAMONDS(Value.TEN, Color.DIAMONDS), TEN_HEARTS(Value.TEN, Color.HEARTS), TEN_SPADES(Value.TEN, Color.SPADES),
 	JACK_CLUBS(Value.JACK, Color.CLUBS), JACK_DIAMONDS(Value.JACK, Color.DIAMONDS), JACK_HEARTS(Value.JACK, Color.HEARTS), JACK_SPADES(Value.JACK, Color.SPADES),
 	QUEEN_CLUBS(Value.QUEEN, Color.CLUBS), QUEEN_DIAMONDS(Value.QUEEN, Color.DIAMONDS), QUEEN_HEARTS(Value.QUEEN, Color.HEARTS), QUEEN_SPADES(Value.QUEEN, Color.SPADES),
-	KING_CLUBS(Value.KING, Color.CLUBS), KING_DIAMONDS(Value.KING, Color.DIAMONDS), KING_HEARTS(Value.KING, Color.HEARTS), KING_SPADES(Value.KING, Color.SPADES);
+	KING_CLUBS(Value.KING, Color.CLUBS), KING_DIAMONDS(Value.KING, Color.DIAMONDS), KING_HEARTS(Value.KING, Color.HEARTS), KING_SPADES(Value.KING, Color.SPADES),
+	JOKER1(Value.JOKER, Color.NONE), JOKER2(Value.JOKER, Color.NONE);
 
 	private Value value;
 	private Color color;
@@ -42,6 +43,6 @@ public enum Card {
 
 	@Override
 	public String toString() {
-		return value + " of " + color;
+		return value + (color != Color.NONE ? " of " + color : "");
 	}
 }
