@@ -93,7 +93,8 @@ public class Packet implements IPacket {
 
 	private void fillPacket() {
 		for (Card card : Card.values())
-			if (packetSize.getLowerRange() <= card.getValue().getValue() && card.getValue().getValue() <= packetSize.getUpperRange())
+			if (packetSize.getLowerRange() <= card.getValue() && card.getValue() <= packetSize.getUpperRange()
+					&& !packetSize.getForbiddenValues().contains(card.getValue()))
 				cards.add(card);
 	}
 

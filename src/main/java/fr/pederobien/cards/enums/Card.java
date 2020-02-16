@@ -12,9 +12,10 @@ public enum Card {
 	NEIN_CLUBS(Value.NEIN, Color.CLUBS), NEIN_DIAMONDS(Value.NEIN, Color.DIAMONDS), NEIN_HEARTS(Value.NEIN, Color.HEARTS), NEIN_SPADES(Value.NEIN, Color.SPADES),
 	TEN_CLUBS(Value.TEN, Color.CLUBS), TEN_DIAMONDS(Value.TEN, Color.DIAMONDS), TEN_HEARTS(Value.TEN, Color.HEARTS), TEN_SPADES(Value.TEN, Color.SPADES),
 	JACK_CLUBS(Value.JACK, Color.CLUBS), JACK_DIAMONDS(Value.JACK, Color.DIAMONDS), JACK_HEARTS(Value.JACK, Color.HEARTS), JACK_SPADES(Value.JACK, Color.SPADES),
-	QUEEN_CLUBS(Value.QUEEN, Color.CLUBS), QUEEN_DIAMONDS(Value.QUEEN, Color.DIAMONDS), QUEEN_HEARTS(Value.QUEEN, Color.HEARTS), QUEEN_SPADES(Value.QUEEN, Color.SPADES),
-	KING_CLUBS(Value.KING, Color.CLUBS), KING_DIAMONDS(Value.KING, Color.DIAMONDS), KING_HEARTS(Value.KING, Color.HEARTS), KING_SPADES(Value.KING, Color.SPADES),
-	JOKER1(Value.JOKER, Color.NONE), JOKER2(Value.JOKER, Color.NONE);
+	KNIGHT_CLUBS(Value.KNIGHT, Color.CLUBS), KNIGHT_DIAMONDS(Value.KNIGHT, Color.DIAMONDS), KNIGHT_HEARTS(Value.KNIGHT, Color.HEARTS),
+	KNIGHT_SPADES(Value.KNIGHT, Color.SPADES), QUEEN_CLUBS(Value.QUEEN, Color.CLUBS), QUEEN_DIAMONDS(Value.QUEEN, Color.DIAMONDS),
+	QUEEN_HEARTS(Value.QUEEN, Color.HEARTS), QUEEN_SPADES(Value.QUEEN, Color.SPADES), KING_CLUBS(Value.KING, Color.CLUBS), KING_DIAMONDS(Value.KING, Color.DIAMONDS),
+	KING_HEARTS(Value.KING, Color.HEARTS), KING_SPADES(Value.KING, Color.SPADES), JOKER1(Value.JOKER, Color.NONE), JOKER2(Value.JOKER, Color.NONE);
 
 	private Value value;
 	private Color color;
@@ -25,8 +26,8 @@ public enum Card {
 		this.color = color;
 	}
 
-	public Value getValue() {
-		return value;
+	public int getValue() {
+		return value.getValue();
 	}
 
 	public Color getColor() {

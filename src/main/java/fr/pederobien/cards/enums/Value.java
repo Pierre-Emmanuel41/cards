@@ -2,8 +2,8 @@ package fr.pederobien.cards.enums;
 
 public enum Value {
 
-	TWO("2", 2), THREE("3", 3), FOUR("4", 4), FIVE("5", 5), SIX("6", 6), SEVEN("7", 7), EIGHT("8", 8), NEIN("9", 9), TEN("10", 10), JACK("jack", 11), QUEEN("queen", 12),
-	KING("king", 13), ACE("ace", 14), JOKER("joker", 15);
+	TWO("2", 2), THREE("3", 3), FOUR("4", 4), FIVE("5", 5), SIX("6", 6), SEVEN("7", 7), EIGHT("8", 8), NEIN("9", 9), TEN("10", 10), JACK("jack", 11),
+	KNIGHT("knight", 12), QUEEN("queen", 13), KING("king", 14), ACE("ace", 15), JOKER("joker", 16);
 
 	private String name;
 	private int value;
