@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.StringJoiner;
 
 import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.enums.PacketSize;
@@ -89,6 +90,15 @@ public class Packet implements IPacket {
 	@Override
 	public List<Card> getCards() {
 		return Collections.unmodifiableList(cards);
+	}
+
+	@Override
+	public String toString() {
+		StringJoiner joiner = new StringJoiner("\n");
+		joiner.add("Packet, size=" + size());
+		for (Card card : cards)
+			joiner.add(card.toString());
+		return joiner.toString();
 	}
 
 	private void fillPacket() {
