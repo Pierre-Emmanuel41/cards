@@ -21,16 +21,6 @@ public class Packet implements IPacket {
 	}
 
 	@Override
-	public void addFirst(Card card) {
-		cards.addFirst(card);
-	}
-
-	@Override
-	public void addLast(Card card) {
-		cards.addLast(card);
-	}
-
-	@Override
 	public Card removeFirst() {
 		return cards.removeFirst();
 	}

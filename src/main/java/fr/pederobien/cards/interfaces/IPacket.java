@@ -10,20 +10,6 @@ import fr.pederobien.cards.enums.PacketSize;
 public interface IPacket {
 
 	/**
-	 * Add the specified card at the beginning of this packet.
-	 * 
-	 * @param card The card to add at the beginning.
-	 */
-	void addFirst(Card card);
-
-	/**
-	 * Add the specified card at the end of this packet.
-	 * 
-	 * @param card The card to add at the end.
-	 */
-	void addLast(Card card);
-
-	/**
 	 * Remove the first {@link Card} of the {@link IPacket}.
 	 * 
 	 * @return The first card in the packet.
