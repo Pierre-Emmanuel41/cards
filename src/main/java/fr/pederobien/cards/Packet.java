@@ -3,6 +3,7 @@ package fr.pederobien.cards;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.enums.PacketSize;
@@ -78,6 +79,17 @@ public class Packet implements IPacket {
 	public void reset(PacketSize packetSize) {
 		this.packetSize = packetSize;
 		reset();
+	}
+
+	@Override
+	public void shuffle() {
+		Random random = new Random();
+		for (int i = size() - 1; 1 <= i; i--) {
+			int randInt = random.nextInt(i);
+			Card temp = cards.get(i);
+			cards.set(i, cards.get(randInt));
+			cards.set(randInt, temp);
+		}
 	}
 
 	private void fillPacket() {

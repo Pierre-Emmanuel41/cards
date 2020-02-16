@@ -73,4 +73,9 @@ public interface IPacket {
 	 * @param packetSize The new size of the packet.
 	 */
 	void reset(PacketSize packetSize);
+
+	/**
+	 * Shuffle the {@link IPacket} randomly.
+	 */
+	void shuffle();
 }
