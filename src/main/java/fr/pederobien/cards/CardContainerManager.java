@@ -1,9 +1,5 @@
 package fr.pederobien.cards;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.enums.PacketProperty;
 import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.ICardContainerManager;
@@ -36,16 +32,11 @@ public class CardContainerManager implements ICardContainerManager {
 
 	@Override
 	public void reset(boolean toBeginning) {
-		if (toBeginning) {
+		if (toBeginning)
 			packet.reset();
-			stock.clear();
-			pill.clear();
-		} else {
-			List<Card> cards = new ArrayList<Card>(stock.getCards());
-			cards.addAll(pill.getCards());
-			packet.addLast(cards);
-			stock.clear();
-			pill.clear();
-		}
+		else
+			packet.addLast(stock.concat(pill).getCards());
+		stock.clear();
+		pill.clear();
 	}
 }
