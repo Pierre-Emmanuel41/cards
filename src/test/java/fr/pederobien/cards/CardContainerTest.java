@@ -79,4 +79,20 @@ public class CardContainerTest {
 		String toString = "CardContainer, size=3\nace of clubs\n5 of clubs\nking of diamonds";
 		Assert.assertEquals(toString, container.toString());
 	}
+
+	@Test
+	public void Tf_Concat() {
+		ICardContainer container1 = new CardContainer();
+		container1.add(Card.EIGHT_HEARTS);
+		container1.add(Card.JACK_HEARTS);
+		ICardContainer container2 = new CardContainer();
+		container2.add(Card.FIFTEEN_TRUMP);
+		container2.add(Card.KING_DIAMONDS);
+
+		Assert.assertEquals(4, container.concat(container1, container2).size());
+		Assert.assertEquals(Card.EIGHT_HEARTS, container.getCards().get(0));
+		Assert.assertEquals(Card.JACK_HEARTS, container.getCards().get(1));
+		Assert.assertEquals(Card.FIFTEEN_TRUMP, container.getCards().get(2));
+		Assert.assertEquals(Card.KING_DIAMONDS, container.getCards().get(3));
+	}
 }

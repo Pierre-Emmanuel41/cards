@@ -48,4 +48,12 @@ public interface ICardContainer {
 	 * @return The {@link List} of cards remaining in this {@link ICardContainer}. This list is unmodifiable.
 	 */
 	List<Card> getCards();
+
+	/**
+	 * Add all the cards of all containers in this {@link ICardContainer}.
+	 * 
+	 * @param containers A set of card container.
+	 * @return This card container.
+	 */
+	ICardContainer concat(ICardContainer... containers);
 }

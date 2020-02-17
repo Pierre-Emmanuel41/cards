@@ -51,6 +51,13 @@ public class CardContainer implements ICardContainer {
 	}
 
 	@Override
+	public ICardContainer concat(ICardContainer... containers) {
+		for (ICardContainer container : containers)
+			addAll(container.getCards());
+		return this;
+	}
+
+	@Override
 	public String toString() {
 		StringJoiner joiner = new StringJoiner("\n");
 		joiner.add("CardContainer, size=" + size());
