@@ -1,7 +1,5 @@
 package fr.pederobien.cards;
 
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -14,7 +12,7 @@ import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.IPacket;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class PacketTest {
+public class PacketTest extends TestAssertion {
 	private IPacket packet;
 
 	@Before
@@ -129,27 +127,5 @@ public class PacketTest {
 		packet.addLast(Card.SEVEN_HEARTS);
 		String toString = "Packet, size=3\n8 of spades\njoker\n7 of hearts";
 		Assert.assertEquals(toString, packet.toString());
-	}
-
-	private void assertDeepEquals(List<Card> list1, List<Card> list2) {
-		if (list1.size() != list2.size())
-			throw new AssertionError("Both list are different (not the same size)");
-		for (int i = 0; i < list1.size(); i++)
-			if (!list1.get(i).equals(list2.get(i)))
-				throw new AssertionError("Elements at range " + i + " are different");
-	}
-
-	private void assertNotDeepEquals(List<Card> list1, List<Card> list2) {
-		if (list1.size() != list2.size())
-			return;
-
-		boolean equals = true;
-		for (int i = 0; i < list1.size(); i++)
-			if (equals)
-				equals &= list1.get(i).equals(list2.get(i));
-			else
-				break;
-		if (equals)
-			throw new AssertionError("Both list are deep equals");
 	}
 }

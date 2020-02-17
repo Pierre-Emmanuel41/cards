@@ -15,7 +15,7 @@ import fr.pederobien.cards.interfaces.ICardContainerManager;
 import fr.pederobien.cards.interfaces.IPacket;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class CardContainerManagerTest {
+public class CardContainerManagerTest extends TestAssertion {
 	private ICardContainerManager manager;
 
 	@Before
@@ -68,13 +68,5 @@ public class CardContainerManagerTest {
 		Assert.assertEquals(0, manager.getStock().size());
 		Assert.assertEquals(32, manager.getPacket().size());
 		assertDeepEquals(manager.getPacket().getCards(), new Packet(PacketProperty.THIRTY_TWO).getCards());
-	}
-
-	private void assertDeepEquals(List<Card> list1, List<Card> list2) {
-		if (list1.size() != list2.size())
-			throw new AssertionError("Both list are different (not the same size)");
-		for (int i = 0; i < list1.size(); i++)
-			if (!list1.get(i).equals(list2.get(i)))
-				throw new AssertionError("Elements at range " + i + " are different");
 	}
 }
