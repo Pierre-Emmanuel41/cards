@@ -70,16 +70,6 @@ public class Game implements IGame {
 	}
 
 	@Override
-	public void giveFirst(String name, int n) {
-		throwIfNotPresent(name).getHand().concat(manager.getPacket().removeFirst(n));
-	}
-
-	@Override
-	public void giveLast(String name, int n) {
-		throwIfNotPresent(name).getHand().concat(manager.getPacket().removeLast(n));
-	}
-
-	@Override
 	public void giveToHand(String name, ICardContainer container) {
 		throwIfNotPresent(name).getHand().concat(container);
 	}

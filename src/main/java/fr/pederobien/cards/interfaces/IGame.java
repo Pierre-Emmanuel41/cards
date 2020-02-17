@@ -1,8 +1,7 @@
 package fr.pederobien.cards.interfaces;
 
+import java.util.Collection;
 import java.util.Optional;
-
-import fr.pederobien.cards.enums.Card;
 
 public interface IGame {
 
@@ -26,6 +25,11 @@ public interface IGame {
 	Optional<IPlayer> unRegisterPlayer(String name);
 
 	/**
+	 * @return A {@link Collection} containing all registered players.
+	 */
+	Collection<IPlayer> getPlayers();
+
+	/**
 	 * Get the player associated to the specified name.
 	 * 
 	 * @param name The name of the player.
@@ -43,28 +47,6 @@ public interface IGame {
 	 * @return The manager used to managed cards.
 	 */
 	ICardContainerManager getManager();
-
-	/**
-	 * Give cards to the hand of the {@link IPlayer} registered with the specified name. This method give the first n cards from the
-	 * packet to the player.
-	 * 
-	 * @param name The name of the player.
-	 * @param n    the number of {@link Card} to give him.
-	 * 
-	 * @throws UnsupportedOperationException If a no player is registered with the name.
-	 */
-	void giveFirst(String name, int n);
-
-	/**
-	 * Give cards to the hand of the {@link IPlayer} registered with the specified name. This method give the last n cards from the
-	 * packet to the player.
-	 * 
-	 * @param name The name of the player.
-	 * @param n    the number of {@link Card} to give him.
-	 * 
-	 * @throws UnsupportedOperationException If a no player is registered with the name.
-	 */
-	void giveLast(String name, int n);
 
 	/**
 	 * Give all cards present in the container to the hand of the player.
