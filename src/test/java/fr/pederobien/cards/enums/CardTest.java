@@ -205,15 +205,4 @@ public class CardTest {
 		Assert.assertEquals(27, Card.TWENTY_ONE_TRUMP.getValue());
 		Assert.assertEquals(28, Card.FOOL_TRUMP.getValue());
 	}
-
-	@Test
-	public void Tc_GetSetPoint_a() {
-		Card.ACE_CLUBS.setPoint(10);
-		Assert.assertEquals(10, Card.ACE_CLUBS.getPoint(), Math.pow(10, -5));
-	}
-
-	@Test(expected = UnsupportedOperationException.class)
-	public void Tc_GetSetPoint_b() {
-		Card.ONE_TRUMP.setPoint(10);
-	}
 }

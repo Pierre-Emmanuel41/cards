@@ -16,30 +16,20 @@ public enum Card {
 	KNIGHT_SPADES(Value.KNIGHT, Color.SPADES), QUEEN_CLUBS(Value.QUEEN, Color.CLUBS), QUEEN_DIAMONDS(Value.QUEEN, Color.DIAMONDS),
 	QUEEN_HEARTS(Value.QUEEN, Color.HEARTS), QUEEN_SPADES(Value.QUEEN, Color.SPADES), KING_CLUBS(Value.KING, Color.CLUBS), KING_DIAMONDS(Value.KING, Color.DIAMONDS),
 	KING_HEARTS(Value.KING, Color.HEARTS), KING_SPADES(Value.KING, Color.SPADES), JOKER1(Value.JOKER, Color.NONE), JOKER2(Value.JOKER, Color.NONE),
-	ONE_TRUMP(Value.ONE, Color.TRUMP, 4.5, false), TWO_TRUMP(Value.TWO, Color.TRUMP, 0.5, false), THREE_TRUMP(Value.THREE, Color.TRUMP, 0.5, false),
-	FOUR_TRUMP(Value.FOUR, Color.TRUMP, 0.5, false), FIVE_TRUMP(Value.FIVE, Color.TRUMP, 0.5, false), SIX_TRUMP(Value.SIX, Color.TRUMP, 0.5, false),
-	SEVEN_TRUMP(Value.SEVEN, Color.TRUMP, 0.5, false), EIGHT_TRUMP(Value.EIGHT, Color.TRUMP, 0.5, false), NEIN_TRUMP(Value.NEIN, Color.TRUMP, 0.5, false),
-	TEN_TRUMP(Value.TEN, Color.TRUMP, 0.5, false), ELEVEN_TRUMP(Value.ELEVEN, Color.TRUMP, 0.5, false), TWELVE_TRUMP(Value.TWELVE, Color.TRUMP, 0.5, false),
-	THIRTEEN_TRUMP(Value.THIRTEEN, Color.TRUMP, 0.5, false), FOURTEEN_TRUMP(Value.FOURTEEN, Color.TRUMP, 0.5, false),
-	FIFTEEN_TRUMP(Value.FIFTEEN, Color.TRUMP, 0.5, false), SIXTEEN_TRUMP(Value.SIXTEEN, Color.TRUMP, 0.5, false),
-	SEVENTEEN_TRUMP(Value.SEVENTEEN, Color.TRUMP, 0.5, false), EIGHTEEN_TRUMP(Value.EIGHTEEN, Color.TRUMP, 0.5, false),
-	NEINTEEN_TRUMP(Value.NEINTEEN, Color.TRUMP, 0.5, false), TWENTY_TRUMP(Value.TWENTY, Color.TRUMP, 0.5, false),
-	TWENTY_ONE_TRUMP(Value.TWENTY_ONE, Color.TRUMP, 4.5, false), FOOL_TRUMP(Value.FOOL, Color.TRUMP, 4.5, false);
+	ONE_TRUMP(Value.ONE, Color.TRUMP), TWO_TRUMP(Value.TWO, Color.TRUMP), THREE_TRUMP(Value.THREE, Color.TRUMP), FOUR_TRUMP(Value.FOUR, Color.TRUMP),
+	FIVE_TRUMP(Value.FIVE, Color.TRUMP), SIX_TRUMP(Value.SIX, Color.TRUMP), SEVEN_TRUMP(Value.SEVEN, Color.TRUMP), EIGHT_TRUMP(Value.EIGHT, Color.TRUMP),
+	NEIN_TRUMP(Value.NEIN, Color.TRUMP), TEN_TRUMP(Value.TEN, Color.TRUMP), ELEVEN_TRUMP(Value.ELEVEN, Color.TRUMP), TWELVE_TRUMP(Value.TWELVE, Color.TRUMP),
+	THIRTEEN_TRUMP(Value.THIRTEEN, Color.TRUMP), FOURTEEN_TRUMP(Value.FOURTEEN, Color.TRUMP), FIFTEEN_TRUMP(Value.FIFTEEN, Color.TRUMP),
+	SIXTEEN_TRUMP(Value.SIXTEEN, Color.TRUMP), SEVENTEEN_TRUMP(Value.SEVENTEEN, Color.TRUMP), EIGHTEEN_TRUMP(Value.EIGHTEEN, Color.TRUMP),
+	NEINTEEN_TRUMP(Value.NEINTEEN, Color.TRUMP), TWENTY_TRUMP(Value.TWENTY, Color.TRUMP), TWENTY_ONE_TRUMP(Value.TWENTY_ONE, Color.TRUMP),
+	FOOL_TRUMP(Value.FOOL, Color.TRUMP);
 
 	private Value value;
 	private Color color;
-	private double point;
-	private boolean canChangePoint;
 
 	private Card(Value value, Color color) {
-		this(value, color, 0, true);
-	}
-
-	private Card(Value value, Color color, double point, boolean canChangePoint) {
 		this.value = value;
 		this.color = color;
-		this.point = point;
-		this.canChangePoint = canChangePoint;
 	}
 
 	public int getValue() {
@@ -48,16 +38,6 @@ public enum Card {
 
 	public Color getColor() {
 		return color;
-	}
-
-	public double getPoint() {
-		return point;
-	}
-
-	public void setPoint(double point) {
-		if (!canChangePoint)
-			throw new UnsupportedOperationException();
-		this.point = point;
 	}
 
 	@Override
