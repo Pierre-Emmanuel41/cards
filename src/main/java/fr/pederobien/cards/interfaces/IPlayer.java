@@ -13,7 +13,7 @@ public interface IPlayer {
 	ICardContainer getHand();
 
 	/**
-	 * Remove all cards from the hand of this {@link IPlayer}.
+	 * Remove all cards from the hand and the pill of this {@link IPlayer}.
 	 */
 	void reset();
 
