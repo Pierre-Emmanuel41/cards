@@ -63,43 +63,43 @@ public class GameTest extends TestAssertion {
 
 	@Test
 	public void Td_Reset_a() {
-		game.getManager().getPacket().shuffle();
-		game.giveToPlayerHand("Player 1", game.getManager().getPacket().removeFirst(3));
-		game.giveToPlayerPill("Player 1", game.getManager().getPacket().removeFirst(3));
-		game.giveToPlayerHand("Player 2", game.getManager().getPacket().removeFirst(3));
-		game.giveToPlayerPill("Player 2", game.getManager().getPacket().removeFirst(3));
-		game.giveToStock(game.getManager().getPacket().removeFirst(3));
-		game.giveToPill(game.getManager().getPacket().removeFirst(3));
+		game.getPacket().shuffle();
+		game.giveToPlayerHand("Player 1", game.getPacket().removeFirst(3));
+		game.giveToPlayerPill("Player 1", game.getPacket().removeFirst(3));
+		game.giveToPlayerHand("Player 2", game.getPacket().removeFirst(3));
+		game.giveToPlayerPill("Player 2", game.getPacket().removeFirst(3));
+		game.giveToStock(game.getPacket().removeFirst(3));
+		game.giveToPill(game.getPacket().removeFirst(3));
 
 		game.reset(false);
-		Assert.assertEquals(78, game.getManager().getPacket().size());
-		assertNotDeepEquals(game.getManager().getPacket().getCards(), new Packet(PacketProperty.FULL).getCards());
+		Assert.assertEquals(78, game.getPacket().size());
+		assertNotDeepEquals(game.getPacket().getCards(), new Packet(PacketProperty.FULL).getCards());
 		Assert.assertEquals(0, game.getPlayer("Player 1").get().getHand().size());
 		Assert.assertEquals(0, game.getPlayer("Player 1").get().getPill().size());
 		Assert.assertEquals(0, game.getPlayer("Player 2").get().getHand().size());
 		Assert.assertEquals(0, game.getPlayer("Player 2").get().getPill().size());
-		Assert.assertEquals(0, game.getManager().getStock().size());
-		Assert.assertEquals(0, game.getManager().getPill().size());
+		Assert.assertEquals(0, game.getStock().size());
+		Assert.assertEquals(0, game.getPill().size());
 	}
 
 	@Test
 	public void Td_Reset_b() {
-		game.getManager().getPacket().shuffle();
-		game.giveToPlayerHand("Player 1", game.getManager().getPacket().removeFirst(3));
-		game.giveToPlayerPill("Player 1", game.getManager().getPacket().removeFirst(3));
-		game.giveToPlayerHand("Player 2", game.getManager().getPacket().removeFirst(3));
-		game.giveToPlayerPill("Player 2", game.getManager().getPacket().removeFirst(3));
-		game.giveToStock(game.getManager().getPacket().removeFirst(3));
-		game.giveToPill(game.getManager().getPacket().removeFirst(3));
+		game.getPacket().shuffle();
+		game.giveToPlayerHand("Player 1", game.getPacket().removeFirst(3));
+		game.giveToPlayerPill("Player 1", game.getPacket().removeFirst(3));
+		game.giveToPlayerHand("Player 2", game.getPacket().removeFirst(3));
+		game.giveToPlayerPill("Player 2", game.getPacket().removeFirst(3));
+		game.giveToStock(game.getPacket().removeFirst(3));
+		game.giveToPill(game.getPacket().removeFirst(3));
 
 		game.reset(true);
-		Assert.assertEquals(78, game.getManager().getPacket().size());
-		assertDeepEquals(game.getManager().getPacket().getCards(), new Packet(PacketProperty.FULL).getCards());
+		Assert.assertEquals(78, game.getPacket().size());
+		assertDeepEquals(game.getPacket().getCards(), new Packet(PacketProperty.FULL).getCards());
 		Assert.assertEquals(0, game.getPlayer("Player 1").get().getHand().size());
 		Assert.assertEquals(0, game.getPlayer("Player 1").get().getPill().size());
 		Assert.assertEquals(0, game.getPlayer("Player 2").get().getHand().size());
 		Assert.assertEquals(0, game.getPlayer("Player 2").get().getPill().size());
-		Assert.assertEquals(0, game.getManager().getStock().size());
-		Assert.assertEquals(0, game.getManager().getPill().size());
+		Assert.assertEquals(0, game.getStock().size());
+		Assert.assertEquals(0, game.getPill().size());
 	}
 }

@@ -9,6 +9,7 @@ import fr.pederobien.cards.enums.PacketProperty;
 import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.ICardContainerManager;
 import fr.pederobien.cards.interfaces.IGame;
+import fr.pederobien.cards.interfaces.IPacket;
 import fr.pederobien.cards.interfaces.IPlayer;
 
 public class Game implements IGame {
@@ -65,8 +66,18 @@ public class Game implements IGame {
 	}
 
 	@Override
-	public ICardContainerManager getManager() {
-		return manager;
+	public IPacket getPacket() {
+		return manager.getPacket();
+	}
+
+	@Override
+	public ICardContainer getStock() {
+		return manager.getStock();
+	}
+
+	@Override
+	public ICardContainer getPill() {
+		return manager.getPill();
 	}
 
 	@Override
@@ -81,12 +92,12 @@ public class Game implements IGame {
 
 	@Override
 	public void giveToStock(ICardContainer from) {
-		getManager().getStock().concat(from);
+		manager.getStock().concat(from);
 	}
 
 	@Override
 	public void giveToPill(ICardContainer from) {
-		getManager().getPill().concat(from);
+		manager.getPill().concat(from);
 	}
 
 	private Optional<IPlayer> checkName(String name, boolean throwIfPresent, String message) {

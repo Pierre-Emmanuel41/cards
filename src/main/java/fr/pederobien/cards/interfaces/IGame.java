@@ -3,6 +3,8 @@ package fr.pederobien.cards.interfaces;
 import java.util.Collection;
 import java.util.Optional;
 
+import fr.pederobien.cards.enums.Card;
+
 public interface IGame {
 
 	/**
@@ -44,9 +46,19 @@ public interface IGame {
 	void reset(boolean toBegining);
 
 	/**
-	 * @return The manager used to managed cards.
+	 * @return The packet of {@link Card} of the game.
 	 */
-	ICardContainerManager getManager();
+	IPacket getPacket();
+
+	/**
+	 * @return The stock of {@link Card} of the game.
+	 */
+	ICardContainer getStock();
+
+	/**
+	 * @return The pill of {@link Card} of the game.
+	 */
+	ICardContainer getPill();
 
 	/**
 	 * Give all cards present in the container to the hand of the player.
