@@ -56,7 +56,7 @@ public interface IGame {
 	 * 
 	 * @throws UnsupportedOperationException If a no player is registered with the name.
 	 */
-	void giveToHand(String name, ICardContainer container);
+	void giveToPlayerHand(String name, ICardContainer container);
 
 	/**
 	 * Give all cards present in the container to the pill of the player.
@@ -66,5 +66,5 @@ public interface IGame {
 	 * 
 	 * @throws UnsupportedOperationException If a no player is registered with the name.
 	 */
-	void giveToPill(String name, ICardContainer container);
+	void giveToPlayerPill(String name, ICardContainer container);
 }

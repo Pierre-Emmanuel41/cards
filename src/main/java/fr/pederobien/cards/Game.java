@@ -70,12 +70,12 @@ public class Game implements IGame {
 	}
 
 	@Override
-	public void giveToHand(String name, ICardContainer container) {
+	public void giveToPlayerHand(String name, ICardContainer container) {
 		throwIfNotPresent(name).getHand().concat(container);
 	}
 
 	@Override
-	public void giveToPill(String name, ICardContainer container) {
+	public void giveToPlayerPill(String name, ICardContainer container) {
 		throwIfNotPresent(name).getPill().concat(container);
 	}
 
