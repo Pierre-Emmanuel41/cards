@@ -81,12 +81,12 @@ public class Game implements IGame {
 
 	@Override
 	public void giveToHand(String name, ICardContainer container) {
-		throwIfNotPresent(name).getHand().addAll(container.getCards());
+		throwIfNotPresent(name).getHand().concat(container);
 	}
 
 	@Override
 	public void giveToPill(String name, ICardContainer container) {
-		throwIfNotPresent(name).getPill().addAll(container.getCards());
+		throwIfNotPresent(name).getPill().concat(container);
 	}
 
 	private Optional<IPlayer> checkName(String name, boolean throwIfPresent, String message) {
