@@ -34,11 +34,11 @@ public interface IPacket {
 	 * Remove the first n {@link Card} from the packet.
 	 * 
 	 * @param n The number of cards to remove from the beginning of the packet
-	 * @return The corresponding cards.
+	 * @return An {@link ICardContainer} with the n cards.
 	 * 
 	 * @throws OperationNotSupportedException if the specified number is out of range (n < 0 || n > size).
 	 */
-	List<Card> removeFirst(int n);
+	ICardContainer removeFirst(int n);
 
 	/**
 	 * Remove the last {@link Card} of the {@link IPacket}.
@@ -51,11 +51,11 @@ public interface IPacket {
 	 * Remove the last n {@link Card} from the packet.
 	 * 
 	 * @param n The number of cards to remove from the end of the packet
-	 * @return The corresponding cards.
+	 * @return An {@link ICardContainer} with the n cards.
 	 * 
 	 * @throws OperationNotSupportedException if the specified number is out of range (n < 0 || n > size).
 	 */
-	List<Card> removeLast(int n);
+	ICardContainer removeLast(int n);
 
 	/**
 	 * @return The actual size of the {@link IPacket}, it correspond to the number of cards remaining in the packet.

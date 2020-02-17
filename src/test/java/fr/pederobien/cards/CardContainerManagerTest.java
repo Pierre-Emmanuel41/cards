@@ -35,10 +35,10 @@ public class CardContainerManagerTest {
 		IPacket packet = manager.getPacket();
 		packet.shuffle();
 		List<Card> pillCards = new ArrayList<Card>();
-		pillCards.addAll(packet.removeFirst(2));
+		pillCards.addAll(packet.removeFirst(2).getCards());
 		manager.getPill().addAll(pillCards);
 		List<Card> stockCards = new ArrayList<Card>();
-		stockCards.addAll(packet.removeLast(2));
+		stockCards.addAll(packet.removeLast(2).getCards());
 		manager.getStock().addAll(stockCards);
 
 		manager.reset(false);
@@ -57,10 +57,10 @@ public class CardContainerManagerTest {
 		IPacket packet = manager.getPacket();
 		packet.shuffle();
 		List<Card> pillCards = new ArrayList<Card>();
-		pillCards.addAll(packet.removeFirst(2));
+		pillCards.addAll(packet.removeFirst(2).getCards());
 		manager.getPill().addAll(pillCards);
 		List<Card> stockCards = new ArrayList<Card>();
-		stockCards.addAll(packet.removeLast(2));
+		stockCards.addAll(packet.removeLast(2).getCards());
 		manager.getStock().addAll(stockCards);
 
 		manager.reset(true);

@@ -1,12 +1,10 @@
 package fr.pederobien.cards;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.enums.PacketProperty;
 import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.ICardContainerManager;
@@ -42,6 +40,11 @@ public class Game implements IGame {
 	}
 
 	@Override
+	public Collection<IPlayer> getPlayers() {
+		return players.values();
+	}
+
+	@Override
 	public Optional<IPlayer> getPlayer(String name) {
 		IPlayer player = players.get(name);
 		return player == null ? Optional.empty() : Optional.of(player);
@@ -53,12 +56,10 @@ public class Game implements IGame {
 			for (IPlayer player : players.values())
 				player.reset();
 		} else {
-			List<Card> cards = new ArrayList<Card>();
 			for (IPlayer player : players.values()) {
-				cards.addAll(player.getHand().getCards());
+				manager.getPacket().addLast(player.getHand().concat(player.getPill()).getCards());
 				player.reset();
 			}
-			manager.getPacket().addLast(cards);
 		}
 		manager.reset(toBeginning);
 	}
@@ -70,12 +71,12 @@ public class Game implements IGame {
 
 	@Override
 	public void giveFirst(String name, int n) {
-		throwIfNotPresent(name).getHand().addAll(manager.getPacket().removeFirst(n));
+		throwIfNotPresent(name).getHand().concat(manager.getPacket().removeFirst(n));
 	}
 
 	@Override
 	public void giveLast(String name, int n) {
-		throwIfNotPresent(name).getHand().addAll(manager.getPacket().removeLast(n));
+		throwIfNotPresent(name).getHand().concat(manager.getPacket().removeLast(n));
 	}
 
 	@Override

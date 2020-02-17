@@ -11,6 +11,7 @@ import org.junit.runners.MethodSorters;
 
 import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.enums.PacketProperty;
+import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.IPacket;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -60,12 +61,12 @@ public class PacketTest {
 
 	@Test
 	public void Tc_removeFirst_b1() {
-		List<Card> cards = packet.removeFirst(5);
-		Assert.assertEquals(Card.ACE_CLUBS, cards.get(0));
-		Assert.assertEquals(Card.ACE_DIAMONDS, cards.get(1));
-		Assert.assertEquals(Card.ACE_HEARTS, cards.get(2));
-		Assert.assertEquals(Card.ACE_SPADES, cards.get(3));
-		Assert.assertEquals(Card.TWO_CLUBS, cards.get(4));
+		ICardContainer container = packet.removeFirst(5);
+		Assert.assertEquals(Card.ACE_CLUBS, container.getCards().get(0));
+		Assert.assertEquals(Card.ACE_DIAMONDS, container.getCards().get(1));
+		Assert.assertEquals(Card.ACE_HEARTS, container.getCards().get(2));
+		Assert.assertEquals(Card.ACE_SPADES, container.getCards().get(3));
+		Assert.assertEquals(Card.TWO_CLUBS, container.getCards().get(4));
 	}
 
 	@Test(expected = UnsupportedOperationException.class)
@@ -85,12 +86,12 @@ public class PacketTest {
 
 	@Test
 	public void Td_removeLast_b1() {
-		List<Card> cards = packet.removeLast(5);
-		Assert.assertEquals(Card.FOOL_TRUMP, cards.get(0));
-		Assert.assertEquals(Card.TWENTY_ONE_TRUMP, cards.get(1));
-		Assert.assertEquals(Card.TWENTY_TRUMP, cards.get(2));
-		Assert.assertEquals(Card.NEINTEEN_TRUMP, cards.get(3));
-		Assert.assertEquals(Card.EIGHTEEN_TRUMP, cards.get(4));
+		ICardContainer container = packet.removeLast(5);
+		Assert.assertEquals(Card.FOOL_TRUMP, container.getCards().get(0));
+		Assert.assertEquals(Card.TWENTY_ONE_TRUMP, container.getCards().get(1));
+		Assert.assertEquals(Card.TWENTY_TRUMP, container.getCards().get(2));
+		Assert.assertEquals(Card.NEINTEEN_TRUMP, container.getCards().get(3));
+		Assert.assertEquals(Card.EIGHTEEN_TRUMP, container.getCards().get(4));
 	}
 
 	@Test(expected = UnsupportedOperationException.class)

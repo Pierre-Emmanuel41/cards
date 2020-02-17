@@ -1,6 +1,5 @@
 package fr.pederobien.cards;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,15 +8,18 @@ import java.util.StringJoiner;
 
 import fr.pederobien.cards.enums.Card;
 import fr.pederobien.cards.enums.PacketProperty;
+import fr.pederobien.cards.interfaces.ICardContainer;
 import fr.pederobien.cards.interfaces.IPacket;
 
 public class Packet implements IPacket {
 	private PacketProperty packetProperty;
 	private LinkedList<Card> cards;
+	private ICardContainer container;
 
 	public Packet(PacketProperty packetProperty) {
 		cards = new LinkedList<Card>();
 		this.packetProperty = packetProperty;
+		container = new CardContainer();
 		fillPacket();
 	}
 
@@ -38,12 +40,12 @@ public class Packet implements IPacket {
 	}
 
 	@Override
-	public List<Card> removeFirst(int n) {
+	public ICardContainer removeFirst(int n) {
 		checkRange(n);
-		List<Card> cardsToReturn = new ArrayList<Card>();
+		container.clear();
 		for (int i = 0; i < n; i++)
-			cardsToReturn.add(removeFirst());
-		return cardsToReturn;
+			container.add(removeFirst());
+		return container;
 	}
 
 	@Override
@@ -52,12 +54,12 @@ public class Packet implements IPacket {
 	}
 
 	@Override
-	public List<Card> removeLast(int n) {
+	public ICardContainer removeLast(int n) {
 		checkRange(n);
-		List<Card> cardsToReturn = new ArrayList<Card>();
+		container.clear();
 		for (int i = 0; i < n; i++)
-			cardsToReturn.add(removeLast());
-		return cardsToReturn;
+			container.add(removeLast());
+		return container;
 	}
 
 	@Override
