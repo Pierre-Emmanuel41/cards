@@ -57,7 +57,7 @@ public class Game implements IGame {
 				player.reset();
 		} else {
 			for (IPlayer player : players.values()) {
-				manager.getPacket().addLast(player.getHand().concat(player.getPill()).getCards());
+				manager.getPacket().addLast(player.getHand().concat(player.getPill()));
 				player.reset();
 			}
 		}

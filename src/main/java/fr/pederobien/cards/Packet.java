@@ -29,8 +29,8 @@ public class Packet implements IPacket {
 	}
 
 	@Override
-	public void addLast(List<Card> cards) {
-		for (Card card : cards)
+	public void addLast(ICardContainer from) {
+		for (Card card : from.getCards())
 			addLast(card);
 	}
 

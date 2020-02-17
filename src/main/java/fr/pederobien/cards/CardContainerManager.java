@@ -35,7 +35,7 @@ public class CardContainerManager implements ICardContainerManager {
 		if (toBeginning)
 			packet.reset();
 		else
-			packet.addLast(stock.concat(pill).getCards());
+			packet.addLast(stock.concat(pill));
 		stock.clear();
 		pill.clear();
 	}

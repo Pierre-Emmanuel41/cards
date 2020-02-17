@@ -1,6 +1,5 @@
 package fr.pederobien.cards;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -45,7 +44,7 @@ public class PacketTest {
 
 	@Test
 	public void Tb_AddLast_b() {
-		List<Card> cards = new ArrayList<Card>();
+		ICardContainer cards = new CardContainer();
 		cards.add(Card.ELEVEN_TRUMP);
 		cards.add(Card.JACK_HEARTS);
 

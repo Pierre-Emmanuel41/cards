@@ -19,9 +19,9 @@ public interface IPacket {
 	/**
 	 * Add the specified {@link List} of {@link Card} at the end of this packet.
 	 * 
-	 * @param cards The list cards to add at the end.
+	 * @param from The container that contains the cards to add.
 	 */
-	void addLast(List<Card> cards);
+	void addLast(ICardContainer from);
 
 	/**
 	 * Remove the first {@link Card} of the {@link IPacket}.
