@@ -67,4 +67,18 @@ public interface IGame {
 	 * @throws UnsupportedOperationException If a no player is registered with the name.
 	 */
 	void giveToPlayerPill(String name, ICardContainer container);
+
+	/**
+	 * Put all cards in the specified {@link ICardContainer} in the stock of this {@link IGame}.
+	 * 
+	 * @param from The container that contains the cards to give to the stock.
+	 */
+	void giveToStock(ICardContainer from);
+
+	/**
+	 * Put all cards in the specified {@link ICardContainer} in the pill of this {@link IGame}.
+	 * 
+	 * @param from The container that contains the cards to give to the pill.
+	 */
+	void giveToPill(ICardContainer from);
 }

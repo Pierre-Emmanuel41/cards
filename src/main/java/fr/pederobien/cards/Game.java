@@ -79,6 +79,16 @@ public class Game implements IGame {
 		throwIfNotPresent(name).getPill().concat(container);
 	}
 
+	@Override
+	public void giveToStock(ICardContainer from) {
+		getManager().getStock().concat(from);
+	}
+
+	@Override
+	public void giveToPill(ICardContainer from) {
+		getManager().getPill().concat(from);
+	}
+
 	private Optional<IPlayer> checkName(String name, boolean throwIfPresent, String message) {
 		Optional<IPlayer> optPlayer = getPlayer(name);
 		if (optPlayer.isPresent() == throwIfPresent)
